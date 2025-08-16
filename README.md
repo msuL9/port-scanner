@@ -1,6 +1,5 @@
 # port-scanner
 
-# Basic Network Port Scanner
 A Python tool to scan for open ports on a target IP.
 
 ## Usage
