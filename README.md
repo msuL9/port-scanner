@@ -83,4 +83,4 @@ Supports fast scanning of large ranges via threading (adjust `max_workers` in `s
 - Uses `pytest` fixtures and monkeypatching for socket isolation.
 
 ## License
-MIT License. See LICENSE[LICENSE] file for details.
+MIT License. See LICENSE file for details.
