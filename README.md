@@ -83,24 +83,5 @@ Supports fast scanning of large ranges via threading (adjust `max_workers` in `s
 - Tests cover: open/closed/filtered ports, errors, multi-port scanning.
 - Uses `pytest` fixtures and monkeypatching for socket isolation.
 
-## Project Structure
-```
-port_scanner_project/
-├── main.py              # CLI entry point
-├── requirements.txt     # Dependencies
-├── src/
-│   ├── __init__.py
-│   └── scanner.py       # Core scanning logic
-├── tests/
-│   ├── __init__.py
-│   └── test_scanner.py  # Unit tests
-└── venv/                # Virtual environment (gitignore this)
-```
-
-## Limitations
-- TCP connect scan only (no SYN/UDP).
-- Use ethically; test on authorized hosts like `scanme.nmap.org`.
-- Threading speed depends on system/network; may hit OS socket limits for very large ranges.
-
 ## License
 MIT License. See LICENSE file for details.
