@@ -1,14 +1,13 @@
 # port-scanner
 
 ## Overview
-This is a modular Python-based TCP port scanner that checks if ports on a target host are open, closed, or filtered. It uses Python's `socket` library for core functionality and supports fast scanning of large port ranges via threading. Designed for educational and testing purposes only—do not use on unauthorized systems.
+This is a Python-based TCP port scanner that checks if ports on a target host are open, closed, or filtered. It uses Python's `socket` library for core functionality and supports fast scanning of large port ranges via threading. Designed for educational and testing purposes only—do not use on unauthorized systems.
 
 ## Features
 - Scans individual or ranges of TCP ports (e.g., 1-1024).
 - Detects port statuses: "open", "closed", or "filtered" (timeout).
 - Parallel scanning with threading for speed (e.g., 1000+ ports in seconds).
 - CLI interface with argparse for easy usage.
-- Modular design: Core logic in `src/scanner.py`, entry point in `main.py`.
 - 100% test coverage using `pytest` and `coverage`, with mocked sockets for isolation.
 - Error handling for invalid inputs and scanning exceptions.
 - Sorted output for consistent results.
