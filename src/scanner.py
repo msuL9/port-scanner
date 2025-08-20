@@ -1,6 +1,7 @@
 import socket
 import logging
 from typing import List, Dict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 logging.basicConfig(level=logging.INFO)
 
@@ -21,8 +22,12 @@ def scan_port(host: str, port: int, timeout: float = 1.0) -> Dict[str, str]:
     return result
 
 def scan_ports(host: str, ports: List[int], timeout: float = 1.0) -> List[Dict[str, str]]:
-    """Scan multiple ports on the host."""
+    """Scan multiple ports on the host using threading for speed."""
     results = []
-    for port in ports:
-        results.append(scan_port(host, port, timeout))
+    with ThreadPoolExecutor(max_workers=100) as executor:  # Adjust max_workers if needed (e.g., for very large ranges)
+        future_to_port = {executor.submit(scan_port, host, port, timeout): port for port in ports}
+        for future in as_completed(future_to_port):
+            results.append(future.result())
+    # Sort results by port for consistent output
+    results.sort(key=lambda x: int(x["port"]))
     return results
