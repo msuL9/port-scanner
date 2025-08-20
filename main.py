@@ -16,8 +16,13 @@ def main():
         return
 
     results = scan_ports(args.host, ports, args.timeout)
-    for result in results:
-        print(f"Port {result['port']}: {result['status']}")
+    open_ports = [r for r in results if r["status"] == "open"]
+    
+    if not open_ports:
+        print("No Open Ports")
+    else:
+        for result in open_ports:
+            print(f"Port {result['port']}: open")
 
 if __name__ == "__main__":
     main()
