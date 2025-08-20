@@ -1,6 +1,4 @@
-# port-scanner
-
-Basic Network Port Scanner
+port-scanner
 Overview
 This is a modular Python-based TCP port scanner that checks if ports on a target host are open, closed, or filtered. It uses Python's socket library for core functionality and supports fast scanning of large port ranges via threading. Designed for educational and testing purposes only—do not use on unauthorized systems.
 Features
@@ -91,4 +89,7 @@ TCP connect scan only (no SYN/UDP).
 Use ethically; test on authorized hosts like scanme.nmap.org.
 Threading speed depends on system/network; may hit OS socket limits for very large ranges.
 
+Contributing
+Fork the repo, create a branch, add changes, test for 100% coverage, and submit a PR.
+License
 MIT License. See LICENSE file for details. (Create LICENSE with standard MIT text if needed.)
